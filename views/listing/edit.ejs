@@ -1,0 +1,59 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <br><br>
+    <h3>Edit your listing</h3>
+    <form method="POST" action="/listings/<%= listings._id %>?_method=PUT" novalidate class="needs-validation">
+    <div class="mb-1">
+      <label for="title"class='form-label'><b>Title</b></label>
+      <input type="text" name="Listing[title]"class="form-control" value="<%= listings.title %>" required/><br><br>
+      <div class="valid-feedback">
+        Title Looks good!
+       </div>
+    </div>
+    <div class="mb-1">
+        <label for="description"class='form-label'>Description</label> 
+     <textarea name="Listing[description]" class="form-control"required><%= listings.description %></textarea><br><br>
+     <div class="invalid-feedback">
+        please enter a short description
+       </div>
+    </div>
+    <div class="mb-2">
+        <label for="image"class='form-label'>Image</label>
+     <input type="text" name="Listing[image]" value="<%= listings.image %>"class="form-control"required/><br><br><br>
+     <div class="invalid-feedback">
+        enter a valid url
+       </div>
+     </div>
+    <div class="row">
+     <div class="mb-1 col-md-4">
+        <label for="price"class='form-label'>Price</label>
+     <input type="number" name="Listing[price]" value="<%= listings.price %>"class="form-control"required/><br><br>
+     <div class="invalid-feedback">
+        price should be valid
+       </div>
+     </div>
+     <div class="mb-1 col-md-8">
+        <label for="country"class='form-label'>Country</label>
+     <input type="text" name="Listing[country]" class="form-control" value="<%= listings.country %>"required/><br><br>
+     <div class="invalid-feedback">
+        country should be valid
+       </div>
+     </div>
+     </div>
+     <div class="mb-2">
+        <label for="location"class='form-label'>Location</label>
+     <input type="text" name="Listing[location]"class="form-control" required value="<%= listings.location %>"class="form-control"/><br><br>
+     <div class="invalid-feedback">
+        location should be valid
+       </div>
+     </div>
+    
+     <button class="btn btn-danger">edit your listing</button>
+     <br><br>
+    </form>
+        </div>
+    </div>
+    <script src="/js/style.js"></script>
+</body>
